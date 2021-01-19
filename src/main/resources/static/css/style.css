@@ -1372,7 +1372,8 @@ ol {
 }
 
 .listing {
-	width: 55%;
+	/*전체 너비로 확장*/
+	/*width: 55%;*/
 	height: 100%;
 	padding: 0 40px;
 	padding-top: 140px;
@@ -3021,7 +3022,8 @@ ol {
 
 @media only screen and (max-width: 1366px) {
 	.listing {
-		width: 65%;
+		/*전체 너비로 맞추기*/
+		/*width: 65%;*/
 	}
 	.listing__map {
 		width: 35%;
@@ -3035,7 +3037,8 @@ ol {
 		margin-right: 26px;
 	}
 	.listing {
-		width: 60%;
+		/*전체 너비로 맞추기*/
+		/*width: 60%;*/
 	}
 	.listing__map {
 		width: 40%;
@@ -3080,7 +3083,8 @@ ol {
 		margin-right: 15px;
 	}
 	.listing {
-		width: 60%;
+		/*전체 너비로 맞추기*/
+		/*width: 60%;*/
 	}
 	.listing__map {
 		width: 40%;
