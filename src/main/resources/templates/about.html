@@ -6,7 +6,7 @@
 
     <title>Directing | Template</title>
 
-
+    <th:block th:replace="layout/header"></th:block>
 <!--    <link rel="stylesheet" href="/layout/header.html">-->
 </head>
 
@@ -16,7 +16,7 @@
         <div class="loader"></div>
     </div>
 
-    <header th:replace="layout/header"></header>
+<!--    <header th:replace="layout/header"></header>-->
 
     <!-- Breadcrumb Begin -->
     <div class="breadcrumb-area set-bg" data-setbg="img/breadcrumb/breadcrumb-normal.jpg">
@@ -287,8 +287,8 @@
 
 
 <!--    <link rel="stylesheet" href="/layout/footer.html">-->
-<!--    <th:block th:replace="layout/footer"></th:block>-->
-    <footer th:replace="layout/footer"></footer>
+    <th:block th:replace="layout/footer"></th:block>
+<!--    <footer th:replace="layout/footer"></footer>-->
 </body>
 
 </html>
