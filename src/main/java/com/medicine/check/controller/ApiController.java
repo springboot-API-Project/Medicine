@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -77,4 +76,40 @@ public class ApiController {
 
         return result + "</xmp>";
     }
+
+    @GetMapping("/side-effect")
+    public StringBuffer sideEffect() {
+        StringBuffer result = new StringBuffer();
+        try {
+            String urlstr = "http://apis.data.go.kr/1471000/MdcinSdefctInfoService/getMdcinSdefctInfoList?" +
+                    "ServiceKey=XtgKFCFkYw2%2F3iWJ0SQQoq2%2BgoizLC4nKTMTi6%2BgHEreb3FFNtxxJf%2FfawW%2FHqT0A0vtGqoBXWZbzi0uhhBnJg%3D%3D" +
+                    "&type=json" +
+                    "&pageNo=1" +
+                    "&numOfRows=3" +
+                    "&col_002=Isoniazide";
+
+            URL url = new URL(urlstr);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+
+            BufferedReader rd;
+            if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
+                rd = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+            } else {
+                rd = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+            }
+
+            String line;
+            while ((line = rd.readLine()) != null) {
+                result.append(line + "\n");
+            }
+            conn.disconnect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
 }
+
+
