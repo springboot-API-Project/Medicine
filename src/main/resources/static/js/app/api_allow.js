@@ -9,22 +9,22 @@
             type: 'POST',
             url: '/api/allow_info/basic',
             async: true,
-            dataType: 'json',
+            dataType: 'text',
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data)
-            // ,
-            // success: function (result) {
-            //     var html="<table width='600' border='1'";
-            //     $.each(data, function (entryIndex, entry) {
-            //         html += "<tr class='bbb'>"
-            //         html += '<td class="bgcolor1">' + entry.id + '</td>';
-            //         html += '<td class="bgcolor2">' + entry.comment_content + '</td>';
-            //         html += '<td class="bgcolor2">' + entry.write_date + '</td>';
-            //         html += '<td id="abc" class="bgcolor2"><input type="button" onclick="rowDelete(this)" value='+ entry.comment_num+'></td>';
-            //         html += '</tr>';
-            //
-            //     })
-            // }
+            ,
+            success: function (result) {
+                var html="<table width='600' border='1'";
+                $.each(data, function (entryIndex, entry) {
+                    html += "<tr class='bbb'>"
+                    html += '<td class="bgcolor1">' + entry.id + '</td>';
+                    html += '<td class="bgcolor2">' + entry.comment_content + '</td>';
+                    html += '<td class="bgcolor2">' + entry.write_date + '</td>';
+                    html += '<td id="abc" class="bgcolor2"><input type="button" onclick="rowDelete(this)" value='+ entry.comment_num+'></td>';
+                    html += '</tr>';
+
+                })
+            }
         }).done(function () {
             window.location.href='/';
         }).fail(function (error) {
