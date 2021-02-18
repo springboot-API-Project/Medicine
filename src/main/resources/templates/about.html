@@ -1,32 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net/nz/thymeleaf/layout"
+      layout:decorate="~{layout/default_layout}">
 
-<head>
-    <meta charset="UTF-8">
 
-    <title>Directing | Template</title>
-
-    <th:block th:replace="layout/header"></th:block>
-<!--    <link rel="stylesheet" href="/layout/header.html">-->
-</head>
-
-<body>
+<div layout:fragment="content">
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
-<!--    <header th:replace="layout/header"></header>-->
-
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-area set-bg" data-setbg="img/breadcrumb/breadcrumb-normal.jpg">
+    <div class="breadcrumb-area set-bg" style="background-image: url('img/breadcrumb/breadcrumb-normal.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
                         <h2>About Us</h2>
                         <div class="breadcrumb__option">
-                            <a th:href="@{/}"><i class="fa fa-home"></i> Home</a>
+                            <a th:href="@{index}"><i class="fa fa-home"></i> Home</a>
                             <span>Aboutus</span>
                         </div>
                     </div>
@@ -66,7 +58,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="about__video set-bg" data-setbg="img/about-video.jpg">
+                    <div class="about__video set-bg" style="background-image: url('img/about-video.jpg')">
                         <a href="https://www.youtube.com/watch?v=8EJ3zbKTWQ8" class="play-btn video-popup"><i class="fa fa-play"></i></a>
                     </div>
                 </div>
@@ -90,7 +82,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="work__item">
                         <div class="work__item__number">01.</div>
-                        <img src="img/work/work-1.png" alt="">
+                        <img th:src="@{img/work/work-1.png}" alt="">
                         <h5>Location & Categories</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore.</p>
@@ -99,7 +91,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="work__item">
                         <div class="work__item__number">02.</div>
-                        <img src="img/work/work-2.png" alt="">
+                        <img th:src="@{img/work/work-2.png}" alt="">
                         <h5>Explore Listting</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore.</p>
@@ -108,7 +100,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="work__item">
                         <div class="work__item__number">03.</div>
-                        <img src="img/work/work-3.png" alt="">
+                        <img th:src="@{img/work/work-3.png}" alt="">
                         <h5>Making Appointments</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                             labore.</p>
@@ -120,7 +112,7 @@
     <!-- Work Section End -->
 
     <!-- Testimonial Section Begin -->
-    <section class="testimonial spad set-bg" data-setbg="img/testimonial/testimonial-bg.jpg">
+    <section class="testimonial spad set-bg" style="background-image: url('img/testimonial/testimonial-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -134,9 +126,9 @@
                                 Consultant made a number of suggestions to help improve our systems. Consultant
                                 explained how things work and why it would help."</p>
                             <div class="testimonial__item__author">
-                                <a href="#review-3"><img src="img/testimonial/author-3.png" alt=""></a>
-                                <a href="#review-1" class="active"><img src="img/testimonial/author-1.png" alt=""></a>
-                                <a href="#review-2"><img src="img/testimonial/author-2.png" alt=""></a>
+                                <a href="#review-3"><img th:src="@{img/testimonial/author-3.png}" alt=""></a>
+                                <a href="#review-1" class="active"><img th:src="@{img/testimonial/author-1.png}" alt=""></a>
+                                <a href="#review-2"><img th:src="@{img/testimonial/author-2.png}" alt=""></a>
                             </div>
                             <div class="testimonial__item__author__text">
                                 <h5>John Smith -</h5>
@@ -155,9 +147,9 @@
                                 Consultant made a number of suggestions to help improve our systems. Consultant
                                 explained how things work and why it would help."</p>
                             <div class="testimonial__item__author">
-                                <a href="#review-1"><img src="img/testimonial/author-1.png" alt=""></a>
-                                <a href="#review-2" class="active"><img src="img/testimonial/author-2.png" alt=""></a>
-                                <a href="#review-3"><img src="img/testimonial/author-3.png" alt=""></a>
+                                <a href="#review-1"><img th:src="@{img/testimonial/author-1.png}" alt=""></a>
+                                <a href="#review-2" class="active"><img th:src="@{img/testimonial/author-2.png}" alt=""></a>
+                                <a href="#review-3"><img th:src="@{img/testimonial/author-3.png}" alt=""></a>
                             </div>
                             <div class="testimonial__item__author__text">
                                 <h5>John Smith -</h5>
@@ -176,9 +168,9 @@
                                 Consultant made a number of suggestions to help improve our systems. Consultant
                                 explained how things work and why it would help."</p>
                             <div class="testimonial__item__author">
-                                <a href="#review-2"><img src="img/testimonial/author-2.png" alt=""></a>
-                                <a href="#review-3" class="active"><img src="img/testimonial/author-3.png" alt=""></a>
-                                <a href="#review-1"><img src="img/testimonial/author-1.png" alt=""></a>
+                                <a href="#review-2"><img th:src="@{img/testimonial/author-2.png}" alt=""></a>
+                                <a href="#review-3" class="active"><img th:src="@{img/testimonial/author-3.png}" alt=""></a>
+                                <a href="#review-1"><img th:src="@{img/testimonial/author-1.png}" alt=""></a>
                             </div>
                             <div class="testimonial__item__author__text">
                                 <h5>John Smith -</h5>
@@ -213,49 +205,49 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="team__item">
-                        <img src="img/team/team-1.jpg" alt="">
+                        <img th:src="@{img/team/team-1.jpg}" alt="">
                         <span>DEVELOPER</span>
                         <h5>John Smith</h5>
                         <div class="team__item__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="google"><i class="fa fa-google"></i></a>
+                            <a th:href="@{#}"><i class="fa fa-facebook"></i></a>
+                            <a th:href="@{#}" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a th:href="@{#}" class="google"><i class="fa fa-google"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team__item">
-                        <img src="img/team/team-2.jpg" alt="">
+                        <img th:src="@{img/team/team-2.jpg}" alt="">
                         <span>DEVELOPER</span>
                         <h5>Garry Toth</h5>
                         <div class="team__item__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="google"><i class="fa fa-google"></i></a>
+                            <a th:href="@{#}"><i class="fa fa-facebook"></i></a>
+                            <a th:href="@{#}" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a th:href="@{#}" class="google"><i class="fa fa-google"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team__item">
-                        <img src="img/team/team-3.jpg" alt="">
+                        <img th:src="@{img/team/team-3.jpg}" alt="">
                         <span>DEVELOPER</span>
                         <h5>Mary Jean</h5>
                         <div class="team__item__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="google"><i class="fa fa-google"></i></a>
+                            <a th:href="@{#}"><i class="fa fa-facebook"></i></a>
+                            <a th:href="@{#}" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a th:href="@{#}" class="google"><i class="fa fa-google"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team__item">
-                        <img src="img/team/team-4.jpg" alt="">
+                        <img th:src="@{img/team/team-4.jpg}" alt="">
                         <span>DEVELOPER</span>
                         <h5>Adam Smith</h5>
                         <div class="team__item__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="google"><i class="fa fa-google"></i></a>
+                            <a th:href="@{#}"><i class="fa fa-facebook"></i></a>
+                            <a th:href="@{#}" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a th:href="@{#}" class="google"><i class="fa fa-google"></i></a>
                         </div>
                     </div>
                 </div>
@@ -285,10 +277,6 @@
     </section>
     <!-- Newslatter Section End -->
 
-
-<!--    <link rel="stylesheet" href="/layout/footer.html">-->
-    <th:block th:replace="layout/footer"></th:block>
-<!--    <footer th:replace="layout/footer"></footer>-->
-</body>
+</div>
 
 </html>
