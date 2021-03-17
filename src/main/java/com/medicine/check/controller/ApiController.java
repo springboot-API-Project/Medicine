@@ -23,6 +23,7 @@ public class ApiController {
             urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지 번호*/
             urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); /*한 페이지 결과수*/
             urlBuilder.append("&type=json"); /*결과 json 포맷*/
+//            URL url = new URL(urlBuilder.toString());
             URL url = new URL(urlBuilder.toString());
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -42,7 +43,8 @@ public class ApiController {
             e.printStackTrace();
         }
 
-        return result + "";
+//        return result + "";
+        return result.toString();
     }
 
     @GetMapping("/allow_info/detail")

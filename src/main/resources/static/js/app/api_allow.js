@@ -6,13 +6,12 @@
 
     $('#btn-allow-basic').on('click', function () {
         $.ajax({
-            type: 'POST',
+            type: 'GET',
             url: '/api/allow_info/basic',
             async: true,
             dataType: 'text',
             contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify(data)
-            ,
+            // data: JSON.stringify(data),
             success: function (result) {
                 var html="<table width='600' border='1'";
                 $.each(data, function (entryIndex, entry) {
@@ -24,12 +23,17 @@
                     html += '</tr>';
 
                 })
+            },
+            error: function () {
+                alert("AJAX fail");
             }
-        }).done(function () {
-            window.location.href='/';
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
-        });
+
+        })
+        //     .done(function () {
+        //     window.location.href='/';
+        // }).fail(function (error) {
+        //     alert(JSON.stringify(error));
+        // });
     })
 });
 
