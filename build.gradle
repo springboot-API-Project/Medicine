@@ -28,6 +28,9 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	implementation('nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect')
+
+	testCompileOnly 'junit:junit:4.12'
+
 }
 
 test {
