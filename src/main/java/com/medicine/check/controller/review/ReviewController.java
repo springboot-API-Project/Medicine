@@ -1,4 +1,4 @@
-﻿package com.medicine.check.controller.review;
+package com.medicine.check.controller.review;
 
 public class ReviewController {
 }

@@ -1,4 +1,4 @@
-﻿package com.medicine.check.controller.member;
+package com.medicine.check.controller.member;
 
 public class MemberController {
 }

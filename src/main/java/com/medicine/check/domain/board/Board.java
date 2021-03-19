@@ -1,13 +1,19 @@
-﻿package com.medicine.check.domain.board;
+package com.medicine.check.domain.board;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Getter
 @Setter
+@Entity
 public class Board {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long brd_id;            // 게시글 id
     private String brd_title;       // 게시글 제목
     private String brd_content;     // 게시글 내용

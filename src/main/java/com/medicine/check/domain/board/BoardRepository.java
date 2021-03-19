@@ -1,4 +1,4 @@
-﻿package com.medicine.check.domain.board;
+package com.medicine.check.domain.board;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

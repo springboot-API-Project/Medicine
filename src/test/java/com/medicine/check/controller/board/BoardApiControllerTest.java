@@ -1,4 +1,4 @@
-﻿package com.medicine.check.controller.board;
+package com.medicine.check.controller.board;
 
 
 import org.junit.After;

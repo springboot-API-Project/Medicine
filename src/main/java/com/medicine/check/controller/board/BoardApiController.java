@@ -1,4 +1,4 @@
-﻿package com.medicine.check.controller.board;
+package com.medicine.check.controller.board;
 
 import com.medicine.check.domain.board.Board;
 import com.medicine.check.service.board.BoardService;
@@ -26,7 +26,7 @@ public class BoardApiController {
     public ModelAndView update(@Param("brd_id") Long brd_id, @RequestBody Board board) {
         ModelAndView mav = new ModelAndView();
 
-        mav.setViewName("board-detail?" + brd_id);
+        mav.setViewName("redirect:board-detail?" + brd_id);
 
         return mav;
     }
@@ -35,7 +35,7 @@ public class BoardApiController {
     public ModelAndView delete(@Param("brd_id") Long brd_id) {
         ModelAndView mav = new ModelAndView();
 
-        mav.setViewName("/");
+        mav.setViewName("redirect:/");
 
         return mav;
     }

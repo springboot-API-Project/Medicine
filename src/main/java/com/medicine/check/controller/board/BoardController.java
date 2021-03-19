@@ -1,4 +1,4 @@
-﻿package com.medicine.check.controller.board;
+package com.medicine.check.controller.board;
 
 import com.medicine.check.service.board.BoardService;
 import com.medicine.check.domain.board.Board;
