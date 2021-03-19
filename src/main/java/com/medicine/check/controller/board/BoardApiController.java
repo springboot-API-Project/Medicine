@@ -8,17 +8,28 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
+import java.io.PrintWriter;
+
 @RequiredArgsConstructor
 @RestController
 public class BoardApiController {
     private final BoardService boardService;
 
+    // Post, Get, Put, Delete - CRUD
+
     @PostMapping("api/board/save")
-    public ModelAndView save() {
+    public ModelAndView save(@RequestBody Board board) {
         ModelAndView mav = new ModelAndView();
 
-        mav.setViewName("blog");
+        boolean isSuccess = boardService.save(board);
 
+        if(!isSuccess) {
+            PrintWriter p = new PrintWriter(System.out);
+            p.println("저장에 실패했습니다.");
+            p.close();
+        } else {
+            mav.setViewName("redirect:board");
+        }
         return mav;
     }
 

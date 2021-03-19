@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net/nz/thymeleaf/layout"
+      layout:decorate="~{layout/default_layout}">
+
+    <div layout:fragment="script">
+        <script th:src="@{js/app/board.js}" />
+    </div>
+
+    <div layout:fragment="content">
+        <section class="blog-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h1>게시글 작성 페이지</h1>
+
+                        <input type="hidden" id="ses_id" value="session값" >
+
+                        <label for="brd_title"> Title </label>
+                        <input type="text" id="brd_title">
+
+                        <label for="brd_content"> Content </label>
+                        <textarea id="brd_content"> </textarea>
+
+                        <label for="mem_nickname"> Nickname </label>
+                        <input type="text" id="mem_nickname" value="mem_nickname받은값" readonly>
+
+                        <input type="button" id="brd_save" value="등록">
+                        <input type="button" value="취소" onclick="location.href='history.back()'">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</html>

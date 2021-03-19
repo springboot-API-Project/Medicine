@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 @Getter
 @Setter
@@ -21,5 +23,6 @@ public class Board {
     private String mem_nickname;    // 작성자 닉네임
     private int brd_hit;            // 게시글 추천 수
     private int brd_like;           // 게시글 좋아요 수
-
+//    private Timestamp brd_createDate;
+    private Date brd_createDate;
 }
