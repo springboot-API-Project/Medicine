@@ -1,9 +1,24 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net/nz/thymeleaf/layout"
-      layout:decorate="~{layout/default_layout}">
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
 
-<div layout:fragment="content">
+    <meta charset="UTF-8">
+    <meta name="description" content="Directing Template">
+    <meta name="keywords" content="Directing, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${board.getBrd_title()}"></title>
+    <div th:replace="layout/common :: css"></div>
+</head>
+<body>
+
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<div th:replace="layout/common :: header"></div>
+
     <!-- Blog Hero Begin -->
     <div class="blog-details-hero set-bg" style="background-image: url('img/blog/details/blog-hero.jpg')">
         <div class="container">
@@ -30,7 +45,7 @@
                 <div class="col-lg-8">
                     <div class="blog__details__text">
                         <div class="blog__details__video set-bg" style="background-image: url('img/blog/details/blog-video-bg.jpg')">
-                            <a th:href="@{https://www.youtube.com/watch(v=8EJ3zbKTWQ8)}" class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                            <a href="https://www.youtube.com/watch?v=8EJ3zbKTWQ8" class="play-btn video-popup"><i class="fa fa-play"></i></a>
                         </div>
                         <h3>게시글 작성하는건 textarea로 해도되고 아님 summernote api 가져와서 넣어도 좋을듯</h3>
                         <p>You have finished building your own website. You have introduced your company and presented
@@ -47,7 +62,7 @@
                             this type of free promotion is right for you. – Make a deal with other web sites on trading
                             links which could help both web sites. Make sure to use words that could easily interest the
                             audience.</p>
-                        <img th:src="@{img/blog/details/blog-item.jpg}" alt="">
+                        <img src="img/blog/details/blog-item.jpg" alt="">
                         <p>Analyze your techniques, keep track of your customers and learn what works. Then be ready to
                             try new methods and repeat those methods that are already working. It has been said that the
                             best things in life are free and this saying also applies to the many forms of free
@@ -234,27 +249,8 @@
     </section>
     <!-- Blog Details Section End -->
 
-    <!-- Newslatter Section Begin -->
-    <section class="newslatter">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="newslatter__text">
-                        <h3>Subscribe Newsletter</h3>
-                        <p>Subscribe to our newsletter and don’t miss anything</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <form action="#" class="newslatter__form">
-                        <input type="text" placeholder="Your email">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Newslatter Section End -->
+<div th:replace="layout/common :: footer"></div>
 
-</div>
-
+<div th:replace="layout/common :: script"></div>
+</body>
 </html>

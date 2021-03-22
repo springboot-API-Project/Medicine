@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="css">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+        <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+        <link rel="stylesheet" href="/css/flaticon.css" type="text/css">
+        <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="/css/barfiller.css" type="text/css">
+        <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="/css/jquery-ui.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/style.css" type="text/css">
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header" th:fragment="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="/"><img src="../img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/review/">Review</a></li>
+                                <li><a href="/board/">Board</a></li>
+                                <li><a href="#">Pages</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/about">About</a></li>
+                                        <li><a href="/listing-details">Listing Details</a></li>
+                                        <li><a href="/blog-details">Blog Details</a></li>
+                                        <li><a href="/contact">Contact</a></li>
+                                    </ul>
+                                </li>
+                                <li th:if="${session['ses_id'] == null}">
+                                    <a href="/member/sign_in">Sign In</a>
+                                    <a href="/member/sign_up">Sign Up</a>
+                                </li>
+                                <li th:unless="${session['ses_id'] == null}">
+                                    <a href="/member/mypage">My Page</a>
+                                    <a href="/member/sign_out">Sign Out</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Footer Section Start -->
+
+    <footer th:fragment="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="/"><img src="img/footer-logo.png" alt=""></a>
+                        </div>
+                        <p>Challenging the way things have always been done can lead to creative new options that reward
+                            you.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1 col-md-6">
+                    <div class="footer__address">
+                        <ul>
+                            <li>
+                                <span>Kim Yejin:</span>
+                            </li>
+                            <li>
+                                <p><a href="https://github.com/eee269">Github 아이콘 넣을까?</a></p>
+                            </li>
+                            <li>
+                                <span>Kim Hyeju:</span>
+                            </li>
+                            <li>
+                                <p><a href="https://github.com/">Github 아이콘 넣을까?</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6">
+                    <div class="footer__widget">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">How it work</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">Sign In</a></li>
+                            <li><a href="#">How it Work</a></li>
+                            <li><a href="#">Advantages</a></li>
+                            <li><a href="#">Direo App</a></li>
+                            <li><a href="#">Packages</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                        <div class="footer__copyright__links">
+                            <a href="#">Terms</a>
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Cookie Policy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Section End -->
+
+
+    <div th:fragment="script">
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <script src="/js/jquery.nice-select.min.js"></script>
+        <script src="/js/jquery-ui.min.js"></script>
+        <script src="/js/jquery.nicescroll.min.js"></script>
+        <script src="/js/jquery.barfiller.js"></script>
+        <script src="/js/jquery.magnific-popup.min.js"></script>
+        <script src="/js/jquery.slicknav.js"></script>
+        <script src="/js/owl.carousel.min.js"></script>
+        <script src="/js/main.js"></script>
+    </div>
+</html>

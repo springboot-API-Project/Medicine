@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net/nz/thymeleaf/layout"
-      layout:decorate="~{layout/default_layout}">
+﻿<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Context-Type" content="text/html; charset=UTF-8">
+    <title>Document</title>
+    <div th:replace="layout/common :: css"></div>
+</head>
+<body>
+<div th:replace="layout/common :: header"></div>
 
-    <div layout:fragment="script">
-        <script th:src="@{js/app/board.js}" />
-    </div>
-
-    <div layout:fragment="content">
         <section class="blog-section spad">
             <div class="container">
                 <div class="row">
@@ -31,6 +31,11 @@
                 </div>
             </div>
         </section>
-    </div>
 
+<div th:replace="layout/common :: footer"></div>
+
+<div th:replace="layout/common :: script"></div>
+
+<script th:src="@{js/app/board.js}" />
+</body>
 </html>
