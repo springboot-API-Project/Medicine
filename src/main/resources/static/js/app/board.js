@@ -1,4 +1,4 @@
-﻿var main = {
+var main = {
     init: function () {
         var _this = this;
 

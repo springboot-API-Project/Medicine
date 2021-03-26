@@ -1,5 +1,6 @@
 package com.medicine.check.controller.board;
 
+import com.medicine.check.controller.dto.BoardDto;
 import com.medicine.check.domain.board.Board;
 import com.medicine.check.service.board.BoardService;
 import lombok.RequiredArgsConstructor;
@@ -33,21 +34,15 @@ public class BoardApiController {
         return mav;
     }
 
-    @PutMapping("api/board/update")
-    public ModelAndView update(@Param("brd_id") Long brd_id, @RequestBody Board board) {
-        ModelAndView mav = new ModelAndView();
-
-        mav.setViewName("redirect:board-detail?" + brd_id);
-
-        return mav;
+    @PutMapping("api/board/update/{brd_id}")
+    public Long update(@PathVariable Long brd_id, @RequestBody BoardDto dto) {
+        // DTO 를 쓰는 이유: Board 도메인은 디비에 직접적으로 맞닿아? 정보를 교환하는 역할,
+        // 정보 변경의 보호를 위해 DTO를 사용
+        return boardService.update(brd_id, dto);
     }
 
-    @DeleteMapping("api/board/delete")
-    public ModelAndView delete(@Param("brd_id") Long brd_id) {
-        ModelAndView mav = new ModelAndView();
-
-        mav.setViewName("redirect:/");
-
-        return mav;
+    @DeleteMapping("api/board/delete/{brd_id}")
+    public void delete(@PathVariable Long brd_id) {
+        boardService.delete(brd_id);
     }
 }

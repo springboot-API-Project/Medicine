@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     printResult = function (data) {
         var result = JSON.stringify(data);
         alert(result);
