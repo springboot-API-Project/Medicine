@@ -1,4 +1,4 @@
-﻿package com.medicine.check.domain.board;
+package com.medicine.check.domain.board;
 
 import com.medicine.check.controller.dto.BoardDto;
 import org.junit.After;
@@ -14,9 +14,5 @@ public class BoardRepositoryTest {
     @Autowired
     private BoardRepository boardRepository;
 
-    @After
-    public void after() {
-        boardRepository.deleteAll();
-    }
 
 }

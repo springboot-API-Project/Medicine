@@ -4,36 +4,36 @@ package com.medicine.check.controller.board;
 import com.medicine.check.controller.dto.BoardDto;
 import com.medicine.check.domain.board.Board;
 import com.medicine.check.domain.board.BoardRepository;
-import com.medicine.check.service.board.BoardService;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
 public class BoardApiControllerTest {
     @LocalServerPort
     int port;
-
     @Autowired
-    private BoardService boardService;
+    private TestRestTemplate restTemplate;
+
     @Autowired
     private BoardRepository boardRepository;
 
-    @After
-    public void after() {
-        // 한 메소드의 테스트가 끝나고 난 뒤 테스트때 들어간 DB내용 삭제
-        boardRepository.deleteAll();
-    }
+//    @After
+//    public void after() {
+//        // 한 메소드의 테스트가 끝나고 난 뒤 테스트때 들어간 DB내용 삭제
+//        boardRepository.deleteAll();
+//    }
 
 
     @Test
@@ -60,7 +60,7 @@ public class BoardApiControllerTest {
 
         // when
         // test 단계
-        boardService.save(board);
+//        boardService.save(board);
 
         // then
         // 테스트 한 후 검증?
@@ -84,8 +84,17 @@ public class BoardApiControllerTest {
         String url = "http://localhost:" + port + "/api/board/update/" + dto.getBrd_id();
 
         // when
-
+        ResponseEntity<Long> entity = restTemplate.postForEntity(url, dto, Long.class);
 
         // then
+        assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(entity.getBody()).isGreaterThan(0L);
+
+        List<Board> boardList = boardRepository.findAll();
+        Board board = boardList.get(boardList.size() -1);
+
+        assertThat(board.getBrd_title()).isEqualTo(title);
+        assertThat(board.getBrd_content()).isEqualTo(content);
+
     }
 }

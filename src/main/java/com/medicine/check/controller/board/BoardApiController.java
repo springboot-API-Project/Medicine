@@ -34,6 +34,8 @@ public class BoardApiController {
         return mav;
     }
 
+    // http://localhost:8080/api/board/update/1     ("api/board/update/{brd_id}")   @PathVariable Long brd_id
+    // http://localhost:8080/api/board/update?brd_id=1      ("api/board/update")    @Path("brd_id") Long id
     @PutMapping("api/board/update/{brd_id}")
     public Long update(@PathVariable Long brd_id, @RequestBody BoardDto dto) {
         // DTO 를 쓰는 이유: Board 도메인은 디비에 직접적으로 맞닿아? 정보를 교환하는 역할,

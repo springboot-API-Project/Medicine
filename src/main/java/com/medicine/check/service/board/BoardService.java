@@ -42,7 +42,7 @@ public class BoardService {
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 존재하지 않습니다."));
         board.update(dto.getBrd_title(), dto.getBrd_content());
 
-        return brd_id;
+        return board.getBrd_id();
     }
 
     public void delete(Long brd_id) {
