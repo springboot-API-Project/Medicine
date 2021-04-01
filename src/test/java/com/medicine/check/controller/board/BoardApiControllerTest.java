@@ -57,13 +57,20 @@ public class BoardApiControllerTest {
                 .mem_id(1L)
                 .mem_nickname("test")
                 .build();
+        String url = "http://localhost:" + port + "/api/board/save";
 
         // when
         // test 단계
-//        boardService.save(board);
+        ResponseEntity<Long> entity = restTemplate.postForEntity(url, board, Long.class);
 
         // then
         // 테스트 한 후 검증?
+
+        // url에 잘 도달했는가?
+        assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);        // 200이냐?
+        assertThat(entity.getBody()).isGreaterThan(0L);
+
+        // save 된 내용이 내가 넣은 내용과 같은가?
         List<Board> boardList = boardRepository.findAll();
         board = boardList.get(boardList.size() -1);
 
