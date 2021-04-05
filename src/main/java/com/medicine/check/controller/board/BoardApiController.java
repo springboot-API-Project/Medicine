@@ -19,19 +19,8 @@ public class BoardApiController {
     // Post, Get, Put, Delete - CRUD
 
     @PostMapping("api/board/save")
-    public ModelAndView save(@RequestBody Board board) {
-        ModelAndView mav = new ModelAndView();
-
-        boolean isSuccess = boardService.save(board);
-
-        if(!isSuccess) {
-            PrintWriter p = new PrintWriter(System.out);
-            p.println("저장에 실패했습니다.");
-            p.close();
-        } else {
-            mav.setViewName("redirect:board");
-        }
-        return mav;
+    public Long save(@RequestBody Board board) {
+        return boardService.save(board);
     }
 
     // http://localhost:8080/api/board/update/1     ("api/board/update/{brd_id}")   @PathVariable Long brd_id

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RequiredArgsConstructor    // 생성자 주입
 public class MemberController {
 
-    private final MemberService memberService;
+//    private final MemberService memberService;
 
 
 }

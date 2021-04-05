@@ -27,7 +27,7 @@ public class BoardController {
 
         model.addAttribute("boardList", boardList);
 
-        return "blog";
+        return "board/blog";
     }
 
     @RequestMapping("board-detail")

@@ -25,12 +25,8 @@ public class BoardService {
         return boardRepository.findAll();
     }
 
-    public boolean save(Board board) {
-        boolean result = false;
-
-        result = board.getBrd_title().equals(boardRepository.save(board).getBrd_title()) ? true : false;
-
-        return result;
+    public Long save(Board board) {
+        return boardRepository.save(board).getBrd_id();
     }
 
     @Transactional
