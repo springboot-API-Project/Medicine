@@ -27,7 +27,7 @@ public class BoardController {
 
         model.addAttribute("boardList", boardList);
 
-        return "board/blog";
+        return "board/board_list";
     }
 
     @RequestMapping("board-detail")
@@ -36,7 +36,7 @@ public class BoardController {
 
         model.addAttribute("board", board);
 
-        return "blog-details";
+        return "board/board_details";
     }
 
     @RequestMapping("board/save")
@@ -55,7 +55,7 @@ public class BoardController {
 
         model.addAttribute("board", board);
 
-        return "";
+        return "board/update_form";
     }
 
 }
